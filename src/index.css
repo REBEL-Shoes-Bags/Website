@@ -1,17 +1,26 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Inter:wght@300;400;500;600;700;800;900&display=swap');
 @import "tailwindcss";
 
 @theme {
-  --color-brand-50: #eff6ff;
-  --color-brand-100: #dbeafe;
-  --color-brand-500: #3b82f6;
-  --color-brand-600: #2563eb;
-  --color-brand-900: #1e3a8a;
+  --color-primary-dark: #121A1B;
+  --color-deep-olive: #505039;
+  --color-sage-green: #A7AA63;
+  --color-cream: #EAE6D2;
+
+  --color-primary: var(--color-sage-green);
+  --color-surface: var(--color-primary-dark);
   
   --font-sans: 'Inter', system-ui, sans-serif;
+  --font-headline: 'Outfit', sans-serif;
+  --font-label: 'Inter', sans-serif;
+}
+
+.editorial-text-shadow {
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
 }
 
 body {
-  @apply bg-slate-950 text-slate-50 antialiased;
+  @apply bg-primary-dark text-cream antialiased;
 }
 
 /* Custom animations */
