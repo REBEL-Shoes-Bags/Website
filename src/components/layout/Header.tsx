@@ -6,12 +6,12 @@ const Header = () => {
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-cream/10 bg-primary-dark/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         <div className="flex items-center cursor-pointer group">
-          <div className="flex items-center justify-center w-18 h-18 overflow-hidden">
+          <div className="flex items-center justify-center w-22 h-22 overflow-hidden">
             <img
               src={Logo}
               alt="Rebel Logo"
               /* brightness-0 invert එකෙන් logo එක සුදු වෙනවා, scale එකෙන් size එක ලොකු වෙනවා */
-              className="w-full h-full object-contain brightness-0 invert scale-150 transition-transform duration-300 group-hover:scale-[1.9] -mt-3"
+              className="w-full h-full object-contain brightness-0 invert scale-150 transition-transform duration-300 group-hover:scale-[2.2] -mt-3"
             />
           </div>
         </div>
