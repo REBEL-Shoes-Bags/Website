@@ -5,17 +5,15 @@ const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-cream/10 bg-primary-dark/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
-        <div className="flex items-center gap-4 cursor-pointer group">
-          <div className="bg-sage-green p-0.5 rounded-lg shadow-lg shadow-sage-green/10 group-hover:shadow-sage-green/20 transition-all flex items-center justify-center overflow-hidden w-14 h-12">
+        <div className="flex items-center cursor-pointer group">
+          <div className="flex items-center justify-center w-16 h-16 overflow-hidden">
             <img
               src={Logo}
-              alt="Logo"
-              className="w-full h-full object-contain brightness-0 scale-[1.5]"
+              alt="Rebel Logo"
+              /* brightness-0 invert එකෙන් logo එක සුදු වෙනවා, scale එකෙන් size එක ලොකු වෙනවා */
+              className="w-full h-full object-contain brightness-0 invert scale-150 transition-transform duration-300 group-hover:scale-[1.7] -mt-4"
             />
           </div>
-          <span className="text-2xl font-black tracking-widest text-cream">
-            REBEL
-          </span>
         </div>
 
         <nav className="hidden md:flex gap-10 text-sm font-semibold text-cream/70">
