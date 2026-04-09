@@ -15,7 +15,7 @@ const Header: React.FC = () => {
         </div>
 
         <nav className="hidden md:flex gap-10 text-sm font-semibold text-cream/70">
-          {['Home', 'Men', 'Women', 'Brands', 'Contact'].map((item) => (
+          {['Home', 'About Us', 'Men', 'Women', 'Brands', 'Contact'].map((item) => (
             <a key={item} href="#" className="hover:text-sage-green transition-colors duration-200 relative group py-2">
               {item}
               <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-sage-green transition-all duration-300 group-hover:w-full rounded-full"></span>
