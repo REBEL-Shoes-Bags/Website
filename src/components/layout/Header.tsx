@@ -1,13 +1,17 @@
 import { LuShoppingBag, LuSearch, LuMenu } from 'react-icons/lu';
-import Logo from '../../assets/Logo.png';
+import Logo from '../../assets/logo.png';
 
 const Header = () => {
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-cream/10 bg-primary-dark/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
         <div className="flex items-center gap-4 cursor-pointer group">
-          <div className="bg-sage-green p-2.5 rounded-xl shadow-lg shadow-sage-green/10 group-hover:shadow-sage-green/20 transition-all">
-            <img src={Logo} alt="Logo" className="w-8 h-8 object-contain brightness-0" />
+          <div className="bg-sage-green p-0.5 rounded-lg shadow-lg shadow-sage-green/10 group-hover:shadow-sage-green/20 transition-all flex items-center justify-center overflow-hidden w-14 h-12">
+            <img
+              src={Logo}
+              alt="Logo"
+              className="w-full h-full object-contain brightness-0 scale-[1.5]"
+            />
           </div>
           <span className="text-2xl font-black tracking-widest text-cream">
             REBEL
