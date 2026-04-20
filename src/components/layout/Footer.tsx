@@ -53,9 +53,9 @@ const Footer: React.FC = () => {
             <h4 className="text-sage-green font-bold mb-6">Newsletter</h4>
             <p className="text-cream/50 text-sm mb-6">Subscribe to get special offers and first look at new drops.</p>
             <div className="relative">
-              <input 
-                type="email" 
-                placeholder="Your email" 
+              <input
+                type="email"
+                placeholder="Your email"
                 className="w-full bg-cream/5 border border-cream/10 rounded-xl py-3 px-4 text-sm text-cream focus:outline-none focus:border-sage-green transition-colors"
               />
               <button className="absolute right-2 top-2 bg-sage-green text-primary-dark p-1.5 rounded-lg hover:bg-sage-green/80 transition-colors">
