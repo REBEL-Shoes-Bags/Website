@@ -2,7 +2,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Header from './components/layout/Header';
 import Footer from './components/layout/Footer';
 import Home from './components/sections/Home';
-// import AboutUs from './components/sections/AboutUs';
+import AboutUs from './components/sections/AboutUs';
+import Categories from './components/sections/Categories';
 
 function App() {
   return (
@@ -14,7 +15,8 @@ function App() {
           <Route path="/" element={
             <main>
               <Home />
-              {/* <AboutUs /> */}
+              <AboutUs />
+              <Categories />
             </main>
           } />
           {/* Add more routes here as needed */}
