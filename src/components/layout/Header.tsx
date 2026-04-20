@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import { LuShoppingBag, LuSearch, LuMenu, LuChevronDown } from 'react-icons/lu';
 import Logo from '../../assets/logo.png';
 
@@ -16,7 +17,7 @@ const Header = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
 
         {/* Logo Section */}
-        <div className="flex items-center cursor-pointer group">
+        <Link to="/" className="flex items-center cursor-pointer group">
           <div className="flex items-center justify-center w-22 h-22 overflow-hidden">
             <img
               src={Logo}
@@ -24,43 +25,43 @@ const Header = () => {
               className="w-full h-full object-contain brightness-0 invert scale-150 transition-transform duration-300 group-hover:scale-[2.2] -mt-3"
             />
           </div>
-        </div>
+        </Link>
 
         {/* Navigation Menu with Dropdowns */}
         <nav className="hidden md:flex gap-8 text-sm font-semibold text-cream/70">
-          <a href="#home" className="hover:text-sage-green transition-colors py-2">Home</a>
+          <Link to="/#home" className="hover:text-sage-green transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">Home</Link>
 
-          <a href="#about" className="hover:text-sage-green transition-colors py-2">About Us</a>
+          <Link to="/#about" className="hover:text-sage-green transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">About</Link>
 
           {Object.keys(menuItems).map((category) => (
             <div
               key={category}
-              className="relative group py-2 flex items-center gap-1 cursor-pointer hover:text-sage-green transition-colors"
+              className="relative group py-2 flex items-center gap-1 cursor-pointer hover:text-sage-green transition-colors font-headline font-bold uppercase tracking-widest text-[10px]"
             >
               <span>{category}</span>
               <LuChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
 
               {/* Dropdown Menu Content */}
               <div className="absolute top-full left-0 w-48 bg-primary-dark border border-cream/10 rounded-xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
-                {menuItems[category].map((subItem) => (
-                  <a
+                {menuItems[category as keyof typeof menuItems].map((subItem) => (
+                  <Link
                     key={subItem}
-                    href="#categories"
-                    className="block px-6 py-2 text-cream/60 hover:text-sage-green hover:bg-cream/5 transition-colors"
+                    to="/#categories"
+                    className="block px-6 py-2 text-cream/60 hover:text-sage-green hover:bg-cream/5 transition-colors font-sans text-xs lowercase first-letter:uppercase"
                   >
                     {subItem}
-                  </a>
+                  </Link>
                 ))}
               </div>
             </div>
           ))}
 
           {/* Promo Sections - Highlighted  */}
-          <a href="#promo" className="text-sage-green hover:text-sage-green/80 transition-colors py-2">
+          <Link to="/#promo" className="text-sage-green hover:text-sage-green/80 transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">
             Promo
-          </a>
+          </Link>
 
-          <a href="#contact" className="hover:text-sage-green transition-colors py-2">Contact</a>
+          <Link to="/#contact" className="hover:text-sage-green transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">Contact</Link>
         </nav>
 
         {/* Action Buttons */}

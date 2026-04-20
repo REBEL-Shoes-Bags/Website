@@ -59,11 +59,11 @@ const Contact: React.FC = () => {
                         <div className="absolute bottom-8 left-8 space-y-4 p-8 bg-primary-dark/40 backdrop-blur-md border border-cream/5 rounded-sm">
                             <div className="flex flex-col gap-1">
                                 <span className="font-label text-[8px] uppercase tracking-[0.3em] text-sage-green font-bold">Contact Us</span>
-                                <p className="font-headline text-cream text-lg"> 0777033331</p>
+                                <p className="font-headline text-cream text-lg tracking-widest">0777033331</p>
                             </div>
                             <div className="flex flex-col gap-1">
                                 <span className="font-label text-[8px] uppercase tracking-[0.3em] text-sage-green font-bold">Visit Us</span>
-                                <p className="font-headline text-cream text-sm leading-tight">No: 24/5, Mayfield Lane,<br />Colombo 04, Sri Lanka</p>
+                                <p className="font-headline text-cream text-sm leading-tight tracking-wider uppercase">No: 24/5, Mayfield Lane,<br />Colombo 13, Sri Lanka</p>
                             </div>
                         </div>
                     </div>

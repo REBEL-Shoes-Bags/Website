@@ -1,5 +1,6 @@
 import React from 'react';
 import { LuShoppingBag, LuFacebook, LuTwitter, LuInstagram, LuYoutube, LuSend } from 'react-icons/lu';
+import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
   return (
@@ -32,9 +33,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-sage-green font-bold mb-6">Collections</h4>
             <ul className="flex flex-col gap-4 text-sm text-cream/50">
-              {['New Arrivals', 'Best Sellers', 'Men Collection', 'Women Collection', 'Limited Edition'].map((item) => (
-                <li key={item}><a href="#" className="hover:text-sage-green transition-colors">{item}</a></li>
-              ))}
+              <li><Link to="/#categories" className="hover:text-sage-green transition-colors font-sans">Men's Pursuit</Link></li>
+              <li><Link to="/#categories" className="hover:text-sage-green transition-colors font-sans">Women's Edition</Link></li>
+              <li><Link to="/#categories" className="hover:text-sage-green transition-colors font-sans">Premium Bags</Link></li>
+              <li><Link to="/#promo" className="hover:text-sage-green transition-colors font-sans">Sports Performance</Link></li>
+              <li><Link to="/faq" className="hover:text-sage-green transition-colors font-sans italic">FAQs & Support</Link></li>
             </ul>
           </div>
 
@@ -42,9 +45,11 @@ const Footer: React.FC = () => {
           <div>
             <h4 className="text-sage-green font-bold mb-6">Company</h4>
             <ul className="flex flex-col gap-4 text-sm text-cream/50">
-              {['About Us', 'Sustainability', 'Terms of Service', 'Privacy Policy', 'Affiliate Program'].map((item) => (
-                <li key={item}><a href="#" className="hover:text-sage-green transition-colors">{item}</a></li>
-              ))}
+              <li><Link to="/about-us" className="hover:text-sage-green transition-colors font-sans">Our Story</Link></li>
+              <li><Link to="/shipping" className="hover:text-sage-green transition-colors font-sans">Shipping & Returns</Link></li>
+              <li><Link to="/refunds" className="hover:text-sage-green transition-colors font-sans">Refund Policy</Link></li>
+              <li><Link to="/privacy" className="hover:text-sage-green transition-colors font-sans">Privacy Policy</Link></li>
+              <li><Link to="/terms" className="hover:text-sage-green transition-colors font-sans">Terms & Conditions</Link></li>
             </ul>
           </div>
 
@@ -67,11 +72,11 @@ const Footer: React.FC = () => {
 
         <div className="pt-8 border-t border-cream/5 flex flex-col md:flex-row justify-between items-center gap-4 text-xs text-cream/30 font-medium">
           <p>© 2026 REBEL Shoes & Bags. All rights reserved.</p>
-          <div className="flex gap-8">
+          {/* <div className="flex gap-8">
             <a href="#" className="hover:text-cream/50 transition-colors">Privacy Policy</a>
             <a href="#" className="hover:text-cream/50 transition-colors">Terms of Service</a>
             <a href="#" className="hover:text-cream/50 transition-colors">Cookie Settings</a>
-          </div>
+          </div> */}
         </div>
       </div>
     </footer>

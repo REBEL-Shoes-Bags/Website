@@ -8,6 +8,17 @@ interface TimeLeft {
   seconds: number;
 }
 
+const TimerUnit = ({ value, label }: { value: number; label: string }) => (
+  <div className="flex flex-col items-center px-4 py-2 bg-white/5 backdrop-blur-lg border border-cream/10 rounded-lg min-w-[70px]">
+    <span className="font-headline text-2xl font-black text-sage-green leading-none">
+      {value.toString().padStart(2, '0')}
+    </span>
+    <span className="font-label text-[8px] tracking-[0.2em] text-cream/50 uppercase mt-1">
+      {label}
+    </span>
+  </div>
+);
+
 const Promo: React.FC = () => {
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ days: 0, hours: 23, minutes: 59, seconds: 59 });
 
@@ -25,16 +36,6 @@ const Promo: React.FC = () => {
     return () => clearInterval(timer);
   }, []);
 
-  const TimerUnit = ({ value, label }: { value: number; label: string }) => (
-    <div className="flex flex-col items-center px-4 py-2 bg-white/5 backdrop-blur-lg border border-cream/10 rounded-lg min-w-[70px]">
-      <span className="font-headline text-2xl font-black text-sage-green leading-none">
-        {value.toString().padStart(2, '0')}
-      </span>
-      <span className="font-label text-[8px] tracking-[0.2em] text-cream/50 uppercase mt-1">
-        {label}
-      </span>
-    </div>
-  );
 
   return (
     <section id="promo" className="bg-primary-dark py-24 px-8 overflow-hidden">
