@@ -52,7 +52,7 @@ const subCategories = [
 
 const Categories: React.FC = () => {
     return (
-        <section className="py-24 bg-primary-dark px-8">
+        <section id="categories" className="py-24 bg-primary-dark px-8">
             <div className="max-w-[1920px] mx-auto">
                 <h2 className="font-headline text-4xl font-black tracking-tighter mb-16 text-center uppercase text-cream">
                     Top Categories

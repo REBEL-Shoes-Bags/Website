@@ -37,7 +37,7 @@ const Promo: React.FC = () => {
   );
 
   return (
-    <section className="bg-primary-dark py-24 px-8 overflow-hidden">
+    <section id="promo" className="bg-primary-dark py-24 px-8 overflow-hidden">
       <div className="max-w-[1920px] mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 h-full min-h-[600px]">
           

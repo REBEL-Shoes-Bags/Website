@@ -5,6 +5,7 @@ import Home from './components/sections/Home';
 import AboutUs from './components/sections/AboutUs';
 import Categories from './components/sections/Categories';
 import Promo from './components/sections/Promo';
+import Contact from './components/sections/Contact';
 
 function App() {
   return (
@@ -19,6 +20,7 @@ function App() {
               <AboutUs />
               <Categories />
               <Promo />
+              <Contact />
             </main>
           } />
           {/* Add more routes here as needed */}

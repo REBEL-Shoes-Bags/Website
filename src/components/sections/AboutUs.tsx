@@ -2,7 +2,7 @@ import React from 'react';
 
 const AboutUs: React.FC = () => {
   return (
-    <section id="about-us" className="bg-primary-dark py-24 px-8 overflow-hidden">
+    <section id="about" className="bg-primary-dark py-24 px-8 overflow-hidden">
       <div className="max-w-[1920px] mx-auto flex flex-col md:flex-row items-center gap-20">
         {/* Left Side: Image Container */}
         <div className="w-full md:w-1/2 relative group">

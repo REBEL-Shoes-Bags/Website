@@ -28,7 +28,7 @@ const Home: React.FC = () => {
   }, []);
 
   return (
-    <div className="min-h-screen bg-primary-dark">
+    <div id="home" className="min-h-screen bg-primary-dark">
       {/* Hero Section */}
       <section className="relative h-[921px] w-full overflow-hidden">
         {slides.map((slide, index) => (

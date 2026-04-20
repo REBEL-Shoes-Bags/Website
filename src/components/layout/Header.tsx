@@ -28,7 +28,9 @@ const Header = () => {
 
         {/* Navigation Menu with Dropdowns */}
         <nav className="hidden md:flex gap-8 text-sm font-semibold text-cream/70">
-          <a href="#" className="hover:text-sage-green transition-colors py-2">Home</a>
+          <a href="#home" className="hover:text-sage-green transition-colors py-2">Home</a>
+
+          <a href="#about" className="hover:text-sage-green transition-colors py-2">About Us</a>
 
           {Object.keys(menuItems).map((category) => (
             <div
@@ -43,7 +45,7 @@ const Header = () => {
                 {menuItems[category].map((subItem) => (
                   <a
                     key={subItem}
-                    href="#"
+                    href="#categories"
                     className="block px-6 py-2 text-cream/60 hover:text-sage-green hover:bg-cream/5 transition-colors"
                   >
                     {subItem}
@@ -54,11 +56,11 @@ const Header = () => {
           ))}
 
           {/* Promo Sections - Highlighted  */}
-          <a href="#" className="text-sage-green hover:text-sage-green/80 transition-colors py-2">
+          <a href="#promo" className="text-sage-green hover:text-sage-green/80 transition-colors py-2">
             Promo
           </a>
 
-          <a href="#" className="hover:text-sage-green transition-colors py-2">Contact</a>
+          <a href="#contact" className="hover:text-sage-green transition-colors py-2">Contact</a>
         </nav>
 
         {/* Action Buttons */}
