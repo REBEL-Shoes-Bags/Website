@@ -4,6 +4,7 @@ import Footer from './components/layout/Footer';
 import Home from './components/sections/Home';
 import AboutUs from './components/sections/AboutUs';
 import Categories from './components/sections/Categories';
+import Promo from './components/sections/Promo';
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
               <Home />
               <AboutUs />
               <Categories />
+              <Promo />
             </main>
           } />
           {/* Add more routes here as needed */}
