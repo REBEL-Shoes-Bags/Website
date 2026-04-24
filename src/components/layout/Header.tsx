@@ -46,8 +46,8 @@ const Header = () => {
                 {menuItems[category as keyof typeof menuItems].map((subItem) => (
                   <Link
                     key={subItem}
-                    to="/#categories"
-                    className="block px-6 py-2 text-cream/60 hover:text-sage-green hover:bg-cream/5 transition-colors font-sans text-xs lowercase first-letter:uppercase"
+                    to={`/${category.toLowerCase()}/${subItem.toLowerCase().replace(/\s+/g, '-')}`}
+                    className="block px-6 py-2 text-[#EAE6D2]/60 hover:text-[#A7AA63] hover:bg-[#EAE6D2]/5 transition-colors font-sans text-xs lowercase first-letter:uppercase"
                   >
                     {subItem}
                   </Link>

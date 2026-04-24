@@ -15,17 +15,17 @@ import PrivacyPolicy from './pages/PrivacyPolicy';
 import RefundPolicy from './pages/RefundPolicy';
 import ShippingReturns from './pages/ShippingReturns';
 import TermsConditions from './pages/TermsConditions';
-
+import CategoryPage from './pages/CategoryPage';
 
 function App() {
   return (
     <Router>
       <ScrollToTop />
-      <div className="min-h-screen bg-primary-dark text-cream relative overflow-hidden font-sans">
+      <div className="min-h-screen bg-[#121A1B] text-[#EAE6D2] relative overflow-hidden font-sans">
         <Header />
 
         <Routes>
-          {/* Landing Page with Section Sections */}
+          {/* Landing Page */}
           <Route path="/" element={
             <main>
               <Home />
@@ -35,6 +35,9 @@ function App() {
               <Contact />
             </main>
           } />
+
+          {/* Dynamic Category Routes */}
+          <Route path="/:category/:subcategory" element={<CategoryPage />} />
 
           {/* Individual Information Pages */}
           <Route path="/about-us" element={<AboutUsPage />} />
