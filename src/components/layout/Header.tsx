@@ -1,17 +1,10 @@
 import { Link } from 'react-router-dom';
 import { LuShoppingBag, LuSearch, LuMenu, LuChevronDown } from 'react-icons/lu';
 import Logo from '../../assets/logo.png';
+import { navigationData } from '../../data/navigation';
+import MegaMenu from './MegaMenu';
 
 const Header = () => {
-  // const [activeDropdown, setActiveDropdown] = useState(null);
-
-  // PDF දත්ත අනුව සකස් කළ Menu Items
-  const menuItems = {
-    Men: ['Shoes', 'Bags', 'Sports Shoes', 'Sports Kits'], // [cite: 8, 9, 10, 11]
-    Women: ['Shoes', 'Bags', 'Sports Shoes', 'Sports Kits'], // [cite: 38, 39, 40, 41]
-    Brands: ['Shoes Brands', 'Bags Brands'], // 
-  };
-
   return (
     <header className="fixed top-0 left-0 right-0 z-50 border-b border-cream/10 bg-primary-dark/80 backdrop-blur-md">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-20">
@@ -33,33 +26,39 @@ const Header = () => {
 
           <Link to="/#about" className="hover:text-sage-green transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">About</Link>
 
-          {Object.keys(menuItems).map((category) => (
+          {navigationData.categories.map((category) => (
             <div
-              key={category}
+              key={category.name}
               className="relative group py-2 flex items-center gap-1 cursor-pointer hover:text-sage-green transition-colors font-headline font-bold uppercase tracking-widest text-[10px]"
             >
-              <span>{category}</span>
+              <span>{category.name}</span>
               <LuChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
 
-              {/* Dropdown Menu Content */}
-              <div className="absolute top-full left-0 w-48 bg-primary-dark border border-cream/10 rounded-xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
-                {menuItems[category as keyof typeof menuItems].map((subItem) => (
-                  <Link
-                    key={subItem}
-                    to={`/${category.toLowerCase()}/${subItem.toLowerCase().replace(/\s+/g, '-')}`}
-                    className="block px-6 py-2 text-[#EAE6D2]/60 hover:text-[#A7AA63] hover:bg-[#EAE6D2]/5 transition-colors font-sans text-xs lowercase first-letter:uppercase"
-                  >
-                    {subItem}
-                  </Link>
-                ))}
-              </div>
+              {/* Mega Menu Content */}
+              <MegaMenu 
+                subCategories={category.subCategories} 
+                categoryPath={category.path} 
+              />
             </div>
           ))}
 
-          {/* Promo Sections - Highlighted  */}
-          <Link to="/#promo" className="text-sage-green hover:text-sage-green/80 transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">
-            Promo
-          </Link>
+          {/* Promo Sections */}
+          <div className="relative group py-2 flex items-center gap-1 cursor-pointer text-sage-green hover:text-sage-green/80 transition-colors font-headline font-bold uppercase tracking-widest text-[10px]">
+            <span>Promo</span>
+            <LuChevronDown size={14} className="group-hover:rotate-180 transition-transform" />
+            
+            <div className="absolute top-full left-0 w-56 bg-primary-dark border border-cream/10 rounded-xl py-4 opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 shadow-2xl">
+              {navigationData.promos.map((promo) => (
+                <Link
+                  key={promo.name}
+                  to={promo.path}
+                  className="block px-6 py-2 text-[#EAE6D2]/60 hover:text-[#A7AA63] hover:bg-[#EAE6D2]/5 transition-colors font-sans text-xs lowercase first-letter:uppercase"
+                >
+                  {promo.name}
+                </Link>
+              ))}
+            </div>
+          </div>
 
           <Link to="/#contact" className="hover:text-sage-green transition-colors py-2 font-headline font-bold uppercase tracking-widest text-[10px]">Contact</Link>
         </nav>
@@ -78,4 +77,4 @@ const Header = () => {
   );
 };
 
-export default Header;
+export default Header;

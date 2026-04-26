@@ -5,7 +5,11 @@ import ProductCard from '../components/products/ProductCard';
 import { products } from '../data/products';
 
 const CategoryPage: React.FC = () => {
-  const { category, subcategory } = useParams<{ category: string; subcategory: string }>();
+  const { category, subcategory, item } = useParams<{ 
+    category: string; 
+    subcategory: string;
+    item?: string;
+  }>();
 
   const displayCategory = useMemo(() => {
     if (!category) return '';
@@ -20,17 +24,28 @@ const CategoryPage: React.FC = () => {
       .join(' ');
   }, [subcategory]);
 
+  const displayItem = useMemo(() => {
+    if (!item) return '';
+    return item
+      .split('-')
+      .map(word => word.charAt(0).toUpperCase() + word.slice(1))
+      .join(' ');
+  }, [item]);
+
   const filteredProducts = useMemo(() => {
     return products.filter(p => {
       const matchCategory = p.category.toLowerCase() === category?.toLowerCase();
       const matchSub = p.subCategory.toLowerCase() === displaySubcategory.toLowerCase();
-      return matchCategory && matchSub;
+      const matchItem = item ? p.name.toLowerCase().includes(displayItem.toLowerCase()) : true;
+      return matchCategory && matchSub && matchItem;
     });
-  }, [category, displaySubcategory]);
+  }, [category, displaySubcategory, displayItem, item]);
+
+  const pageTitle = item ? displayItem : displaySubcategory;
 
   return (
     <ProductLayout 
-      title={displaySubcategory} 
+      title={pageTitle} 
       category={displayCategory} 
       subCategory={displaySubcategory}
     >

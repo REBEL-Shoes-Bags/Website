@@ -38,6 +38,7 @@ function App() {
 
           {/* Dynamic Category Routes */}
           <Route path="/:category/:subcategory" element={<CategoryPage />} />
+          <Route path="/:category/:subcategory/:item" element={<CategoryPage />} />
 
           {/* Individual Information Pages */}
           <Route path="/about-us" element={<AboutUsPage />} />
