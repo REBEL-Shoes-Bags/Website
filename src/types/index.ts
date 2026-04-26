@@ -3,7 +3,7 @@ export interface Product {
   name: string;
   price: number;
   image: string;
-  category: 'Men' | 'Women' | 'Brands';
+  category: 'MENS' | 'WOMENS' | 'BRANDS';
   subCategory: string;
   brand?: string;
   colors?: string[];
@@ -13,4 +13,4 @@ export interface Product {
   isSale?: boolean;
 }
 
-export type CategoryType = 'Men' | 'Women' | 'Brands';
+export type CategoryType = 'MENS' | 'WOMENS' | 'BRANDS';
