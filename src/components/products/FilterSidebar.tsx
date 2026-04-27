@@ -1,5 +1,5 @@
 import React from 'react';
-import { LuX, LuChevronDown } from 'react-icons/lu';
+import { X, ChevronDown } from 'lucide-react';
 
 interface FilterSidebarProps {
   isOpen: boolean;
@@ -34,7 +34,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
         <div className="flex items-center justify-between lg:hidden mb-8">
           <h2 className="font-headline font-black text-2xl uppercase tracking-tighter text-[#EAE6D2]">Filters</h2>
           <button onClick={onClose} className="p-2 text-[#EAE6D2] hover:text-[#A7AA63] transition-colors">
-            <LuX size={24} />
+            <X size={24} />
           </button>
         </div>
 
@@ -45,7 +45,7 @@ const FilterSidebar: React.FC<FilterSidebarProps> = ({ isOpen, onClose }) => {
                 <h3 className="font-headline font-bold text-xs uppercase tracking-widest text-[#EAE6D2]/90 group-hover:text-[#A7AA63] transition-colors">
                   {filter.name}
                 </h3>
-                <LuChevronDown size={14} className="text-[#EAE6D2]/40 group-hover:text-[#A7AA63] transition-colors" />
+                <ChevronDown size={14} className="text-[#EAE6D2]/40 group-hover:text-[#A7AA63] transition-colors" />
               </div>
               
               <div className="grid grid-cols-2 gap-2">

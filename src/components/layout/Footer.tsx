@@ -1,5 +1,6 @@
 import React from 'react';
-import { LuShoppingBag, LuFacebook, LuTwitter, LuInstagram, LuYoutube, LuSend } from 'react-icons/lu';
+import { ShoppingBag, Send } from 'lucide-react';
+import { FaFacebook, FaTwitter, FaInstagram, FaYoutube } from 'react-icons/fa';
 import { Link } from 'react-router-dom';
 
 const Footer: React.FC = () => {
@@ -11,7 +12,7 @@ const Footer: React.FC = () => {
           <div className="flex flex-col gap-6">
             <div className="flex items-center gap-4 cursor-pointer group">
               <div className="bg-sage-green p-2 rounded-xl text-primary-dark shadow-lg">
-                <LuShoppingBag size={20} />
+                <ShoppingBag size={20} />
               </div>
               <span className="text-xl font-black tracking-widest text-cream">
                 REBEL
@@ -21,7 +22,7 @@ const Footer: React.FC = () => {
               Redefining premium footwear since 2026. We combine earth-toned aesthetics with unparalleled craftsmanship.
             </p>
             <div className="flex gap-4">
-              {[LuFacebook, LuTwitter, LuInstagram, LuYoutube].map((Icon, i) => (
+              {[FaFacebook, FaTwitter, FaInstagram, FaYoutube].map((Icon, i) => (
                 <a key={i} href="#" className="w-10 h-10 rounded-full bg-cream/5 border border-cream/10 flex items-center justify-center text-cream/40 hover:bg-sage-green hover:text-primary-dark transition-all duration-300">
                   <Icon size={18} />
                 </a>
@@ -64,7 +65,7 @@ const Footer: React.FC = () => {
                 className="w-full bg-cream/5 border border-cream/10 rounded-xl py-3 px-4 text-sm text-cream focus:outline-none focus:border-sage-green transition-colors"
               />
               <button className="absolute right-2 top-2 bg-sage-green text-primary-dark p-1.5 rounded-lg hover:bg-sage-green/80 transition-colors">
-                <LuSend size={16} />
+                <Send size={16} />
               </button>
             </div>
           </div>

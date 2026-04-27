@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { LuFilter, LuArrowRight } from 'react-icons/lu';
+import { Filter, ArrowRight } from 'lucide-react';
 import FilterSidebar from '../products/FilterSidebar';
 
 interface ProductLayoutProps {
@@ -25,11 +25,11 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ children, title, category
         <div className="mb-12 space-y-4">
           <nav className="flex items-center gap-2 text-[10px] font-bold uppercase tracking-[0.2em] text-[#EAE6D2]/40">
             <span className="hover:text-[#A7AA63] cursor-pointer transition-colors">Home</span>
-            <LuArrowRight size={10} />
+            <ArrowRight size={10} />
             <span className="hover:text-[#A7AA63] cursor-pointer transition-colors">{category}</span>
             {subCategory && (
               <>
-                <LuArrowRight size={10} />
+                <ArrowRight size={10} />
                 <span className="text-[#A7AA63]">{subCategory}</span>
               </>
             )}
@@ -44,7 +44,7 @@ const ProductLayout: React.FC<ProductLayoutProps> = ({ children, title, category
               onClick={() => setIsFilterOpen(true)}
               className="lg:hidden flex items-center gap-2 bg-[#EAE6D2]/5 border border-[#EAE6D2]/10 px-6 py-3 rounded-xl text-[10px] font-bold uppercase tracking-widest text-[#EAE6D2] hover:border-[#A7AA63] transition-all"
             >
-              <LuFilter size={16} />
+              <Filter size={16} />
               Filters
             </button>
           </div>

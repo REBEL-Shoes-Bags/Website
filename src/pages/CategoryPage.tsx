@@ -35,11 +35,26 @@ const CategoryPage: React.FC = () => {
   const filteredProducts = useMemo(() => {
     return products.filter(p => {
       const matchCategory = p.category.toLowerCase() === category?.toLowerCase();
-      const matchSub = p.subCategory.toLowerCase() === displaySubcategory.toLowerCase();
-      const matchItem = item ? p.name.toLowerCase().includes(displayItem.toLowerCase()) : true;
+      
+      // If subcategory is provided, match it
+      let matchSub = true;
+      if (subcategory) {
+        matchSub = p.subCategory.toLowerCase().replace(/\s+/g, '-') === subcategory.toLowerCase();
+      }
+
+      // If item (itemType or brand) is provided, match it
+      let matchItem = true;
+      if (item) {
+        const itemLower = item.toLowerCase().replace(/\s+/g, '-');
+        const itemTypeLower = p.itemType?.toLowerCase().replace(/\s+/g, '-');
+        const brandLower = p.brand?.toLowerCase().replace(/\s+/g, '-');
+        
+        matchItem = itemTypeLower === itemLower || brandLower === itemLower;
+      }
+
       return matchCategory && matchSub && matchItem;
     });
-  }, [category, displaySubcategory, displayItem, item]);
+  }, [category, subcategory, item]);
 
   const pageTitle = item ? displayItem : displaySubcategory;
 
@@ -61,7 +76,7 @@ const CategoryPage: React.FC = () => {
             No products found
           </p>
           <p className="text-[#EAE6D2]/20 text-sm max-w-md">
-            We are updating our {displaySubcategory} collection. Stay tuned!
+            We are updating our {displaySubcategory} {displayItem && `> ${displayItem}`} collection. Stay tuned!
           </p>
         </div>
       )}
