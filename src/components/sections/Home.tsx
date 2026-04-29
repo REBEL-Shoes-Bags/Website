@@ -5,16 +5,32 @@ import {
   LuShieldCheck,
   LuHeadphones
 } from 'react-icons/lu';
+import H1 from '../../assets/h1.webp';
+import H2 from '../../assets/h2.webp';
+// import H3 from '../../assets/h3.webp';
+import H4 from '../../assets/h4.webp';
+import H5 from '../../assets/h5.webp';
 
 const slides = [
   {
-    url: "https://images.unsplash.com/photo-1539109136881-3be0616acf4b?q=80&w=1974&auto=format&fit=crop",
+    url: H1,
     alt: "High-fashion minimalist earth-toned photography"
   },
   {
-    url: "https://images.unsplash.com/photo-1581044777550-4cfa60707c03?q=80&w=2040&auto=format&fit=crop",
+    url: H2,
     alt: "Premium fashion editorial with earth tones"
-  }
+  },
+  // {
+  //   url: H3,
+  //   alt: "High-fashion minimalist earth-toned photography"
+  // },
+  {
+    url: H4,
+    alt: "Premium fashion editorial with earth tones"
+  }, {
+    url: H5,
+    alt: "High-fashion minimalist earth-toned photography"
+  },
 ];
 
 const Home: React.FC = () => {
@@ -22,7 +38,7 @@ const Home: React.FC = () => {
 
   useEffect(() => {
     const timer = setInterval(() => {
-      setCurrentSlide((prev) => (prev === 0 ? 1 : 0));
+      setCurrentSlide((prev) => (prev + 1) % slides.length);
     }, 5000);
     return () => clearInterval(timer);
   }, []);
