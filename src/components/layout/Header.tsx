@@ -21,7 +21,7 @@ const Header = () => {
       product.brand.toLowerCase().includes(query) ||
       product.category.toLowerCase().includes(query) ||
       product.subCategory.toLowerCase().includes(query) ||
-      product.itemType.toLowerCase().includes(query)
+      (product.itemType || '').toLowerCase().includes(query)
     ).slice(0, 4); // Premium limited results
   }, [searchQuery]);
 
