@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { 
-  ChevronRight, 
   CreditCard, 
   Truck, 
   User, 
@@ -15,7 +14,6 @@ import type { CheckoutStep, CheckoutFormData } from '../types';
 
 const CheckoutPage: React.FC = () => {
   const { items, subtotal, clearCart } = useCart();
-  const navigate = useNavigate();
   const [step, setStep] = useState<CheckoutStep>(1);
   const [isProcessing, setIsProcessing] = useState(false);
   const [isCompleted, setIsCompleted] = useState(false);
