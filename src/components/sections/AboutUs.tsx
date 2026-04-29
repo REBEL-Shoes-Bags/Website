@@ -1,35 +1,39 @@
 import React from 'react';
+import Logo from '../../assets/logo.png';
 
 const AboutUs: React.FC = () => {
   return (
-    <section id="about" className="bg-primary-dark py-24 px-8 overflow-hidden">
-      <div className="max-w-[1920px] mx-auto flex flex-col md:flex-row items-center gap-20">
+    <section id="about" className="bg-primary-dark py-16 md:py-24 px-4 sm:px-8 overflow-hidden">
+      <div className="max-w-[1920px] mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
         {/* Left Side: Image Container */}
-        <div className="w-full md:w-1/2 relative group">
-          <div className="absolute -top-4 -left-4 w-full h-full border-[0.5px] border-cream/20 translate-x-4 translate-y-4 transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2"></div>
+        <div className="w-full lg:w-1/2 relative group">
+          <div className="absolute -top-4 -left-4 w-full h-full border-[0.5px] border-cream/20 translate-x-4 translate-y-4 transition-transform duration-700 group-hover:translate-x-2 group-hover:translate-y-2 hidden md:block"></div>
           <img 
-            className="relative w-full aspect-[4/5] object-cover grayscale transition-transform duration-700 group-hover:scale-[1.02] shadow-2xl" 
+            className="relative w-full aspect-[4/5] object-cover grayscale transition-transform duration-700 group-hover:scale-[1.02] shadow-2xl rounded-2xl md:rounded-none" 
             alt="Editorial high fashion photography in earth tones" 
             src="https://lh3.googleusercontent.com/aida-public/AB6AXuBsxcbLiityIe8uTCtxLVlKgI3yok-Y6WPty5zFR-W_VYICgU_756y-WWOvsq8YPgRTcdsvRxdcXI1110ShcbAJdzXmo7IGJ6GMHKPQv2I-X8u2_bW9DbVtnQD1VKO4QVb2Hp3CGozKmsYnmaTRw9gNR75H1bViPJcEm67094ibEThMuCBiOlvPZ_hmecRpztSXmNfQTooeRLrHzhEA3kljJQSbcZ7WkRYWrkvnG-F6VsS0rSHp04Ldq2nL3LsTDU1HblQ_1Dw7nj2g"
           />
+          <div className="absolute -bottom-4 -right-4 md:-bottom-8 md:-right-8 w-24 h-24 md:w-32 md:h-32 opacity-10 pointer-events-none grayscale invert brightness-0">
+            <img src={Logo} alt="Rebel Watermark" className="w-full h-full object-contain" />
+          </div>
         </div>
 
         {/* Right Side: Content */}
-        <div className="w-full md:w-1/2 space-y-8">
+        <div className="w-full lg:w-1/2 space-y-6 md:space-y-8 text-left">
           <div className="flex flex-col gap-2">
             <span className="font-label text-[10px] uppercase tracking-[0.3em] text-sage-green font-bold">About us</span>
             <div className="w-12 h-[1px] bg-sage-green"></div>
           </div>
           
-          <h2 className="font-headline text-5xl md:text-6xl font-black tracking-tighter leading-tight text-cream">
-            EXPRESS YOURSELF <br/>THROUGH FASHION
+          <h2 className="font-headline text-4xl md:text-6xl font-black tracking-tighter leading-tight text-cream">
+            EXPRESS YOURSELF <br className="hidden md:block" />THROUGH FASHION
           </h2>
           
-          <p className="font-sans text-cream/70 leading-relaxed max-w-lg text-lg">
+          <p className="font-sans text-cream/70 leading-relaxed max-w-lg text-base md:text-lg">
             REBEL is more than a brand; it's a statement of individuality. Our curated collection of shoes and bags is designed for those who refuse to follow the grain. Every piece is an intersection of architectural precision and street-ready rebellion.
           </p>
           
-          <button className="relative group overflow-hidden border-b border-sage-green py-2 font-headline font-bold text-xs tracking-widest text-cream hover:text-sage-green transition-colors inline-flex items-center gap-4">
+          <button className="relative group overflow-hidden border-b border-sage-green py-2 font-headline font-bold text-xs tracking-widest text-cream hover:text-sage-green transition-colors inline-flex items-center gap-4 uppercase">
             READ MORE
             <span className="w-8 h-[1px] bg-sage-green transition-all duration-300 group-hover:w-12"></span>
           </button>

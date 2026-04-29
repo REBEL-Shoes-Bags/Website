@@ -5,6 +5,7 @@ import {
   LuShieldCheck,
   LuHeadphones
 } from 'react-icons/lu';
+import BrandMarquee from './BrandMarquee';
 import H1 from '../../assets/h1.webp';
 import H2 from '../../assets/h2.webp';
 import H3 from '../../assets/h3.avif';
@@ -52,7 +53,7 @@ const Home: React.FC = () => {
   return (
     <div id="home" className="min-h-screen bg-primary-dark">
       {/* Hero Section */}
-      <section className="relative h-[921px] w-full overflow-hidden">
+      <section className="relative h-[100svh] sm:h-[85vh] md:h-[921px] w-full overflow-hidden">
         {slides.map((slide, index) => (
           <div
             key={index}
@@ -70,11 +71,11 @@ const Home: React.FC = () => {
 
         <div className="relative z-10 h-full flex items-center justify-center px-4">
           <div className="text-center max-w-4xl">
-            <h1 className="font-headline text-5xl md:text-8xl font-extrabold text-cream tracking-tighter leading-none mb-8 editorial-text-shadow">
+            <h1 className="font-headline text-3xl sm:text-5xl md:text-7xl lg:text-8xl font-extrabold text-cream tracking-tighter leading-none mb-6 sm:mb-8 editorial-text-shadow">
               DISCOVER YOUR <br />UNIQUE STYLE
             </h1>
 
-            <button className="relative group overflow-hidden bg-sage-green/20 backdrop-blur-md border border-cream/20 text-cream px-12 py-5 font-headline font-bold text-sm tracking-[0.2em] transition-all duration-300 hover:bg-sage-green hover:text-primary-dark active:scale-95 shadow-2xl">
+            <button className="relative group overflow-hidden bg-sage-green/20 backdrop-blur-md border border-cream/20 text-cream px-8 py-3.5 sm:px-12 sm:py-5 font-headline font-bold text-xs sm:text-sm tracking-[0.2em] transition-all duration-300 hover:bg-sage-green hover:text-primary-dark active:scale-95 shadow-2xl">
               SHOP NOW
               <span className="absolute inset-0 bg-gradient-to-r from-transparent via-white/10 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-1000"></span>
             </button>
@@ -82,12 +83,12 @@ const Home: React.FC = () => {
         </div>
 
         {/* Slider Indicators */}
-        <div className="absolute bottom-12 left-1/2 -translate-x-1/2 flex gap-4 z-20">
+        <div className="absolute bottom-8 sm:bottom-12 left-1/2 -translate-x-1/2 flex gap-3 sm:gap-4 z-20">
           {slides.map((_, index) => (
             <div
               key={index}
               onClick={() => setCurrentSlide(index)}
-              className={`w-12 h-[2px] cursor-pointer transition-all duration-300 ${index === currentSlide ? 'bg-sage-green' : 'bg-cream/30'
+              className={`w-8 sm:w-12 h-[2px] cursor-pointer transition-all duration-300 ${index === currentSlide ? 'bg-sage-green' : 'bg-cream/30'
                 }`}
             ></div>
           ))}
@@ -95,8 +96,8 @@ const Home: React.FC = () => {
       </section>
 
       {/* Features */}
-      <section className="py-16 bg-deep-olive/10 px-8">
-        <div className="max-w-[1920px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-12">
+      <section className="py-10 sm:py-16 bg-deep-olive/10 px-4 sm:px-8">
+        <div className="max-w-[1920px] mx-auto grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-12">
           {/* Feature 1 */}
           <div className="flex flex-col items-center text-center gap-4 group cursor-default">
             <div className="p-4 rounded-full bg-sage-green/10 text-sage-green group-hover:bg-sage-green group-hover:text-primary-dark transition-all duration-300">
@@ -130,6 +131,9 @@ const Home: React.FC = () => {
           </div>
         </div>
       </section>
+
+      {/* Brand Marquee */}
+      <BrandMarquee />
     </div>
   );
 };
