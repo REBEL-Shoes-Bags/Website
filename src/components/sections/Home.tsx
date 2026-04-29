@@ -7,9 +7,10 @@ import {
 } from 'react-icons/lu';
 import H1 from '../../assets/h1.webp';
 import H2 from '../../assets/h2.webp';
-// import H3 from '../../assets/h3.webp';
+import H3 from '../../assets/h3.avif';
 import H4 from '../../assets/h4.webp';
 import H5 from '../../assets/h5.webp';
+import H6 from '../../assets/h6.avif';
 
 const slides = [
   {
@@ -20,17 +21,22 @@ const slides = [
     url: H2,
     alt: "Premium fashion editorial with earth tones"
   },
-  // {
-  //   url: H3,
-  //   alt: "High-fashion minimalist earth-toned photography"
-  // },
+  {
+    url: H3,
+    alt: "High-fashion minimalist earth-toned photography"
+  },
   {
     url: H4,
     alt: "Premium fashion editorial with earth tones"
-  }, {
+  },
+  {
     url: H5,
     alt: "High-fashion minimalist earth-toned photography"
   },
+  {
+    url: H6,
+    alt: "High-fashion minimalist earth-toned photography"
+  }
 ];
 
 const Home: React.FC = () => {
